@@ -44,3 +44,25 @@ create trigger test_trigger after update on sc for each row
         select sc.sno, Grade,student.Scholarsihp,Sno from student,sc where sc.Sno=student.Sno and sc.Grade>95
                                     );
     end;
+# (11)
+# (12)
+create procedure p1()
+begin
+  select avg(Grade),max(Grade) from sc, student where student.Sno=sc.Sno and student.Sdept='CS';
+end;
+call p1();
+# (13)
+create procedure p2(in stu_no varchar(9))
+begin
+    select student.sname from student where Sno=stu_no;
+end;
+call p2('200215121');
+# (14)
+create function fun1(stu_no varchar(9))
+returns varchar(20) deterministic
+begin
+    declare stu_name varchar(20);
+    select student.sname into stu_name from student where student.Sno=stu_no;
+    return stu_name;
+end;
+select fun1('200215121');
