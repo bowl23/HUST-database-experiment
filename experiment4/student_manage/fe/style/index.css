@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    /* height: 100vh; */
+    /* overflow: hidden; */
+}
+
+.top {
+    width: 100%;
+    height: 50px;
+    float: left;
+    background-color: pink;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.dataList,
+th,
+td {
+    border: solid;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    height: 100px;
+}
+
+
+.student,
+.sc,
+.course {
+    cursor: pointer;
+}
+
+.dataList {
+    width: 100vw;
+    /* height: 800px; */
+}
