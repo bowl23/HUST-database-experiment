@@ -4,7 +4,7 @@ create table Student(
     Ssex char(2),
     Sage smallint,
     Sdept char(20),
-    Scholarsihp char(2)
+    Scholarship char(2)
 );
 create table Course(
     Cno char(4) primary key,
