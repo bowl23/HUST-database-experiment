@@ -19,6 +19,7 @@ body {
     justify-content: space-evenly;
 }
 
+
 .dataList,
 th,
 td {
@@ -39,5 +40,6 @@ td {
 }
 
 .dataList {
+    margin-top: 20px;
     width: 100vw;
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/student.css">
+    <title>Document</title>
+</head>
+<body>
+       <div class="top">
+        <div class="student">学生信息</div>
+        <div class="sc">选课信息</div>
+        <div class="course">课程信息</div>
+    </div>
+    <form class="center">
+        <label>学号</label>
+        <input type="text" id="Sno" name="Sno">
+        <label >姓名</label>
+        <input type="text" id="Sname" name="Sname">
+        <label >性别</label>
+        <input type="text"  id="Ssex" name="Ssex">
+        <label >年龄</label>
+        <input type="text" id="Sage" name="Sage">
+        <label >系别</label>
+        <input type="text" id="Sdept" name="Sdept">
+        <label >奖学金</label>
+        <input type="text" id="Scholarship" name="Scholarship">
+        <div class="addBtn">提交</div>
+    </form>
+      <table class="dataList">
+        <tr class="tableHead"></tr>
+        <tbody class="tableBody"></tbody>
+    </table>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="../scripts/student.js"></script>
+</html>
