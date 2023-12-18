@@ -36,7 +36,8 @@ td {
 .student,
 .sc,
 .course,
-.statistics {
+.statistics,
+.personalGrade {
     cursor: pointer;
 }
 

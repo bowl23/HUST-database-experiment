@@ -50,3 +50,4 @@ select * from course where Cname='C语言' or Cname='人工智能';
 # (10)
 delete from course where Cname='人工智能';
 select * from course;
+use student_manage;

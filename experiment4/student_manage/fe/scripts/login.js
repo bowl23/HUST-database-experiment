@@ -14,12 +14,11 @@ document.querySelector('.loginBtn').addEventListener('click', () => {
         let correctUsername = result.data[0].username;
         let correctPassword = result.data[0].password;
         if (correctPassword === password && correctUsername === username) {
-            console.log('登录成功');
+            alert('登录成功');
             window.location.href = 'student.html';
         }
         else {
-            console.log('登录失败');
+            alert('登录失败');
         }
-        // if(result.data)
     })
 });
