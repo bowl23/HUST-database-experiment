@@ -15,7 +15,7 @@ document.querySelector('.loginBtn').addEventListener('click', () => {
         let correctPassword = result.data[0].password;
         if (correctPassword === password && correctUsername === username) {
             console.log('登录成功');
-            window.location.href = 'index.html';
+            window.location.href = 'student.html';
         }
         else {
             console.log('登录失败');

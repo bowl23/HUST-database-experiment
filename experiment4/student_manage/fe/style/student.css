@@ -1,5 +1,15 @@
-.addBtn {
-    display: inline-block;
+.dataFunction {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+
+.addBtn,
+.updateBtn,
+.selectBtn,
+.deleteBtn {
     cursor: pointer;
     margin-left: 20px;
 }
