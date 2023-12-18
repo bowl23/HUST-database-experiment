@@ -5,7 +5,7 @@
 实验四课程设计：
 
 - 技术栈：
-  - 前端：react
+  - 前端：HTML+CSS+JavaScript
   - 后端：express+MySQL
 - 实验环境：
   - VSCode
