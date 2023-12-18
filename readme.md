@@ -6,7 +6,7 @@
 
 - 技术栈：
   - 前端：HTML+CSS+JavaScript
-  - 后端：express+MySQL
+  - 后端：node.js+express+MySQL
 - 实验环境：
   - VSCode
   - Datagrip
