@@ -1,6 +1,7 @@
 const student = document.querySelector('.student');
 const sc = document.querySelector('.sc');
 const course = document.querySelector('.course');
+const gradeStatistics = document.querySelector('.statistics');
 
 student.addEventListener('click', () => {
     window.location.href = 'student.html'
@@ -12,4 +13,8 @@ sc.addEventListener('click', () => {
 
 course.addEventListener('click', () => {
     window.location.href = 'course.html'
+})
+
+gradeStatistics.addEventListener('click', () => {
+    window.location.href = 'statistics.html'
 })

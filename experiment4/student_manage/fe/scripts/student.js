@@ -93,6 +93,6 @@ deleteBtn.addEventListener('click', () => {
     }).then(result => {
         alert(result.data);
     })
-    window.location.reload;
+    window.location.reload();
 })
 

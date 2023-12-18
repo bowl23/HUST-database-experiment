@@ -20,6 +20,7 @@ server.get('/api/login', (req, res) => {
     })
 })
 
+//student界面的api
 //新增学生
 server.get('/api/student/add', (req, res) => {
     console.log(req.query);
@@ -55,7 +56,7 @@ server.get('/api/student/select', (req, res) => {
     })
 })
 
-//更新学生，根据学号修改，掐他修改暂时懒得搞
+//更新学生，根据学号修改，其他修改暂时懒得搞
 server.get('/api/student/update', (req, res) => {
     console.log('update');
     let Sno = req.query.Sno;
@@ -103,9 +104,9 @@ server.get('/api/student/delete', (req, res) => {
     }
 })
 
-
+// sc界面的api
 //选课查询
-server.get('/api/scSelect', (req, res) => {
+server.get('/api/sc/select', (req, res) => {
     db.query('select * from sc', (err, data) => {
         if (err) {
             throw err;
@@ -116,8 +117,66 @@ server.get('/api/scSelect', (req, res) => {
     })
 })
 
+// 选课增加
+server.get('/api/sc/add', (req, res) => {
+    console.log(req.query);
+    let Sno = req.query.Sno;
+    let Cno = req.query.Cno;
+    let Grade = req.query.Grade;
+    let flag = Sno && Cno && Grade;
+    if (flag) {
+        db.query('insert into sc values (?,?,?)', [Sno, Cno, Grade], (err, data) => {
+            if (err)
+                throw err;
+        })
+        res.end('新增选课成功')
+    }
+    else {
+        res.end('请填写正确选课信息');
+    }
+})
+
+// 选课修改
+server.get('/api/sc/update', (req, res) => {
+    console.log(req.query);
+    let Sno = req.query.Sno;
+    let Cno = req.query.Cno;
+    let Grade = req.query.Grade;
+    let flag = Sno && Cno && Grade;
+    if (flag) {
+        db.query('update sc set Grade=? where Sno=? and Cno=?', [Grade, Sno, Cno], (err, data) => {
+            if (err)
+                throw err;
+        })
+        res.end('更改选课成功')
+    }
+    else {
+        res.end('请填写正确选课信息');
+    }
+})
+
+// 选课删除
+server.get('/api/sc/delete', (req, res) => {
+    let Sno = req.query.Sno;
+    let Cno = req.query.Cno;
+    let Grade = req.query.Grade;
+    let flag = Sno && Cno && Grade;
+    if (flag) {
+        db.query('delete from sc where Sno=? and Cno=?;', [Sno, Cno], (err, data) => {
+            if (err)
+                throw err;
+        })
+        res.end('删除选课信息成功')
+    }
+    else {
+        res.end('请正确填写完整选课信息');
+    }
+
+})
+
+// course界面的api
 //课程查询
-server.get('/api/courseSelect', (req, res) => {
+server.get('/api/course/select', (req, res) => {
     db.query('select * from course', (err, data) => {
         if (err) {
             throw err;
@@ -125,6 +184,73 @@ server.get('/api/courseSelect', (req, res) => {
         else {
             res.end(JSON.stringify(data));
         }
+    })
+})
+
+// 课程新增
+server.get('/api/course/add', (req, res) => {
+    console.log(req.query);
+    let Cno = req.query.Cno;
+    let Cname = req.query.Cname;
+    let Cpno = req.query.Cpno;
+    let Credit = req.query.Credit;
+    let flag = Cno && Cname && Cpno && Credit;
+    if (flag) {
+        db.query('insert into course values (?,?,?,?)', [Cno, Cname, Cpno, Credit], (err, data) => {
+            if (err)
+                throw err;
+        })
+        res.end('新增课程成功')
+    }
+    else {
+        res.end('请填写正确课程信息');
+    }
+})
+
+// 课程修改
+server.get('/api/course/update', (req, res) => {
+    console.log(req.query);
+    let Cno = req.query.Cno;
+    let Cname = req.query.Cname;
+    let Cpno = req.query.Cpno;
+    let Credit = req.query.Credit;
+    let flag = Cno && Cname && Cpno && Credit;
+    if (flag) {
+        db.query('update course set Cname=?, Cpno=?, Credit=? where Cno=?', [Cname, Cpno, Credit, Cno], (err, data) => {
+            if (err)
+                throw err;
+        })
+        res.end('更改课程成功')
+    }
+    else {
+        res.end('请填写正确课程信息');
+    }
+})
+
+// 课程删除
+server.get('/api/course/delete', (req, res) => {
+    let Cno = req.query.Cno;
+    let Cname = req.query.Cname;
+    let Cpno = req.query.Cpno;
+    let Credit = req.query.Credit;
+    let flag = Cno && Cname && Cpno && Credit;
+    if (flag) {
+        db.query('delete from course where Cno=? and Cname=?;', [Cno, Cname], (err, data) => {
+            if (err)
+                throw err;
+        })
+        res.end('删除课程信息成功')
+    }
+    else {
+        res.end('请正确填写完整课程信息');
+    }
+
+})
+
+// cs学生成绩查询
+server.get('/api/statistics/cs', (req, res) => {
+    db.query('', (err, data) => {
+
     })
 })
 

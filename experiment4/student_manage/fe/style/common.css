@@ -35,11 +35,25 @@ td {
 
 .student,
 .sc,
-.course {
+.course,
+.statistics {
     cursor: pointer;
 }
 
 .dataList {
     margin-top: 20px;
     width: 100vw;
+}
+
+.dataFunction {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.addBtn,
+.updateBtn,
+.selectBtn,
+.deleteBtn {
+    cursor: pointer;
+    margin-left: 20px;
 }

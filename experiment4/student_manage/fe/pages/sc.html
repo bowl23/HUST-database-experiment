@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/sc.css">
     <title>选课信息</title>
 </head>
 <body>
-    
+    <div class="top">
+        <div class="student">学生信息</div>
+        <div class="sc">选课信息</div>
+        <div class="course">课程信息</div>
+        <div class="statistics">成绩统计</div>
+
+    </div>
+    <div class="center">
+        <label>学号</label>
+        <input type="text" name="Sno" id="Sno">
+        <label >课程号</label>
+        <input type="text" name="Cno" id="Cno">
+        <label >成绩</label>
+        <input type="text" name="Grade" id="Grade">
+    </div>
+    <div class="dataFunction">
+        <div class="selectBtn">查询</div>
+        <div class="addBtn">增加</div>
+        <div class="updateBtn">修改</div>
+        <div class="deleteBtn">删除</div>
+    </div>
+    <table class="dataList">
+        <tr class="tableHead"></tr>
+        <tbody class="tableBody"></tbody>
+    </table>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="../scripts/sc.js"></script>
+<script src="../scripts/commo.js"></script>
 </html>
