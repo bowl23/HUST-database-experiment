@@ -4,36 +4,113 @@
 
 }
 
-background {
+body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    background-color: #1E1E1E;
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
-    /* background-color: pink; */
+    width: 600px;
+    height: 700px;
+    margin: 100px;
+    float: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #2d2d2d;
+    border-radius: 50px;
+    position: relative;
 }
 
 #username,
 #password {
-    width: 200px;
-    height: 20px;
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #454545;
+    background-color: transparent;
+    margin-bottom: 100px;
+    font-size: 20px;
+    color: #006fff;
 }
+
+input:focus {
+    outline: none;
+}
+
+label {
+    position: absolute;
+    color: #9e9e9e;
+    font-size: 25px;
+    left: 150px;
+    transition: 0.2s ease all;
+}
+
+.usernameLabel {
+    top: 180px;
+}
+
+.passwordLabel {
+    top: 310px
+}
+
+input:focus+label
+
+/* ,input:not(:placeholder-shown)+label  */
+    {
+    transform: translateY(-30px);
+    font-size: 20px;
+    color: #006fff;
+}
+
 
 .loginBtn {
     width: 100px;
     height: 50px;
     margin-top: 20px;
-    /* background-color: aqua; */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     cursor: pointer;
+    font-size: 30px;
+    color: #9e9e9e;
+}
+
+.loginBtn:hover {
+    color: #006fff;
+}
+
+
+.title {
+    float: left;
+    /* background-color: pink; */
+    font-size: 100px;
+    margin: 100px 0 0 0;
+}
+
+.first {
+    color: #6c35de;
+}
+
+.second {
+    color: #3F51B5;
+}
+
+.third {
+    color: #006fff;
+}
+
+.forth {
+    color: #0085ff;
+}
+
+.fifth {
+    color: #00E5FF;
 }
