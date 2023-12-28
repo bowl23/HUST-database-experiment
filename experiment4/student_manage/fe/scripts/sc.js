@@ -42,7 +42,7 @@ addBtn.addEventListener('click', () => {
             Grade: Grade.value
         }
     }).then(result => {
-        alert(result.data)
+        alert(result.data);
     })
     window.location.reload();
 })

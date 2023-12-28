@@ -249,7 +249,7 @@ server.get('/api/course/delete', (req, res) => {
 
 // cs学生成绩查询
 server.get('/api/statistics/cs', (req, res) => {
-    db.query(' select student.Sdept sdeption, avg(Grade) avg,max(Grade) max,min(Grade) min from sc,student where Student.Sno=sc.Sno GROUP BY Sdept;', (err, data) => {
+    db.query('select student.Sdept sdeption, avg(Grade) avg,max(Grade) max,min(Grade) min from sc,student where Student.Sno=sc.Sno GROUP BY Sdept;', (err, data) => {
         if (err) {
             throw err;
         }
