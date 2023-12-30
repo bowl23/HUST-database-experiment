@@ -49,15 +49,24 @@ select avg(Grade) from SC where Cno='1';
 select Sno from SC group by Sno having count(*)>3;
 
 
+use experiment1;
+
 # 拓展练习
 # 拓展练习
 select Sno,Sname,Sage from student;
 select * from student where Sdept='CS';
 select Sno,Cno,Grade from SC where Grade>=90||Grade<60;
 select Sname,Ssex,Sage from student where Sage<19||Sage>20;
+select Sno from student where Sno not in (select Sno from sc);
+select Cno from course where Cno not in (select Cno from sc);
 select Sname,Sdept from student where Sdept='MA'||Sdept='IS';
 select Cno,Cname,Credit from course where Cname like '%数据%';
 select student.Sno ,course.Cno from student,sc,course where student.Sno!=sc.Sno;
 select max(Grade),min(Grade),avg(Grade) from SC where Sno='200215121';
 select Sno,Grade from sc where Cno='2' order by Grade asc ;
 select Sdept,avg(Sage) from student group by Sdept;
+
+
+
+
+use experiment1

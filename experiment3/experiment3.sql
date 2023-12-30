@@ -66,3 +66,6 @@ begin
     return stu_name;
 end;
 select fun1('200215121');
+
+create function Select(table_name varchar(20))
+returns
