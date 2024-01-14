@@ -1,18 +1,20 @@
-import styles from './index.css'
+import styles from './index.scss'
 import axios from 'axios'
 import { useNavigate } from 'react-router'
 import { useRef } from 'react'
+import { Button, Card, Input } from 'antd'
+
 
 
 const Login = () => {
     const nav = useNavigate();
-    const userNameDom = useRef(null)
-    const passwordDom = useRef(null)
+    const userNameDom = useRef()
+    const passwordDom = useRef()
 
     const login = () => {
-        console.log(userNameDom.current.value, passwordDom.current.value);
-        const username = userNameDom.current.value
-        const password = passwordDom.current.value
+        console.log(userNameDom.current.input.defaultValue, passwordDom.current.input.defaultValue);
+        const username = userNameDom.current.input.defaultValue
+        const password = passwordDom.current.input.defaultValue
         axios({
             url: 'http://localhost:3000/api/login',
             params: {
@@ -35,20 +37,30 @@ const Login = () => {
     }
 
     return <>
-        <form className="container">
-            <input type="text" name="username" id="username" ref={userNameDom} />
-            <label className="usernameLabel" placeholder=" " >用户名</label>
-            <input type="password" name="password" id="password" ref={passwordDom} />
-            <label className="passwordLabel" placeholder=" " >密码</label>
-            <div className="loginBtn" onClick={login}>登录</div>
-        </form>
-        <div className="title">
-            <div className="first">Manage</div>
-            <div className="second">Your</div>
-            <div className="third">Student</div>
-            <div className="forth">Information</div>
-            <div className="fifth">Effectively</div>
-        </div>
+        {
+            <Card className='container'>
+                <div className='inputContainer'>
+                    <div className='label'>用户名</div>
+                    <Input className='input' id='username' placeholder='请输入用户名' ref={userNameDom}></Input>
+                </div>
+                <div className='inputContainer'>
+                    <div className='label'>密码</div>
+                    <Input.Password className='input' id='password' placeholder='请输入密码' ref={passwordDom}></Input.Password>
+                </div>
+                <Button id='login' type='primary' onClick={login}>登录</Button>
+            </Card>
+
+
+
+
+        /* <form className="container">
+                    <input type="text" name="username" id="username" ref={userNameDom} />
+                    <label className="usernameLabel" placeholder=" " >用户名</label>
+                    <input type="password" name="password" id="password" ref={passwordDom} />
+                    <label className="passwordLabel" placeholder=" " >密码</label>
+                    <div className="loginBtn" onClick={login}>登录</div>
+                </form> */}
+
     </>
 }
 export default Login

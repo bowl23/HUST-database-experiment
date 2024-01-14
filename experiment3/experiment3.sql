@@ -67,5 +67,9 @@ begin
 end;
 select fun1('200215121');
 
-create function Select(table_name varchar(20))
-returns
+# (15)
+alter table sc add constraint c1 check ( Grade between 0 and 100);
+update sc set Grade=80 where Sno='200215121' and Cno=1;
+alter table sc add constraint c1 check ( Grade between 0 and 100);
+update sc set Grade=120 where Sno='200215121' and Cno=1;
+select * from sc;

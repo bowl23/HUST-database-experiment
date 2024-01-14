@@ -8,8 +8,10 @@ server.use(cors());//解决跨域问题的插件
 
 //登录api
 server.get('/api/login', (req, res) => {
+    // console.log(req);
     let username = req.query.username;
     let password = req.query.password;
+    console.log(username, password);
     db.query('select * from user where username=? and password=?', [username, password], (err, data) => {
         if (err) {
             throw err;
@@ -46,6 +48,7 @@ server.get('/api/student/add', (req, res) => {
 
 //查询学生
 server.get('/api/student/select', (req, res) => {
+    console.log(req);
     let table = req.query.table
     db.query('select * from student', (err, data) => {
         if (err) {
