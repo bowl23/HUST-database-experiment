@@ -4,6 +4,8 @@ import axios from 'axios'
 import { useState } from 'react'
 import selectFunc from '../../utils/select'
 import addFunc from '../../utils/add'
+import deleteFunc from '../../utils/delete'
+import updateFunc from '../../utils/update'
 
 const selectUrl = 'http://localhost:3000/api/student/select'
 const addUrl = 'http://localhost:3000/api/student/add'
@@ -31,8 +33,8 @@ const Student = () => {
             <div className="selectBtn" onClick={() => selectFunc(selectUrl, setNewlist)}>查询</div>
             {/* 函数里面传函数，这就是JavaScript带给我的自信 */}
             <div className="addBtn" onClick={() => addFunc(addUrl, selectUrl, setNewlist, obj)}>增加</div>
-            <div className="updateBtn">修改</div>
-            <div className="deleteBtn">删除</div>
+            <div className="updateBtn" onClick={() => updateFunc(updateUrl, selectUrl, setNewlist, obj)}>修改</div>
+            <div className="deleteBtn" onClick={() => deleteFunc(deleteUrl, selectUrl, setNewlist, obj)}>删除</div>
         </div>
 
         <form className="center" >
