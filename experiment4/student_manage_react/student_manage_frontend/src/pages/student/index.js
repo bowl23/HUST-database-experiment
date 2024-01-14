@@ -5,6 +5,13 @@ import { useState } from 'react'
 import selectFunc from '../../utils/select'
 import addFunc from '../../utils/add'
 
+const selectUrl = 'http://localhost:3000/api/student/select'
+const addUrl = 'http://localhost:3000/api/student/add'
+const updateUrl = 'http://localhost:3000/api/student/update'
+const deleteUrl = 'http://localhost:3000/api/student/delete'
+
+
+
 const Student = () => {
     const [newlist, setNewlist] = useState([])
     let obj =
@@ -21,9 +28,9 @@ const Student = () => {
         <Header></Header>
 
         <div className="dataFunction">
-            <div className="selectBtn" onClick={() => selectFunc('http://localhost:3000/api/student/select', setNewlist)}>查询</div>
+            <div className="selectBtn" onClick={() => selectFunc(selectUrl, setNewlist)}>查询</div>
             {/* 函数里面传函数，这就是JavaScript带给我的自信 */}
-            <div className="addBtn" onClick={() => addFunc('http://localhost:3000/api/student/add', setNewlist, obj)}>增加</div>
+            <div className="addBtn" onClick={() => addFunc(addUrl, selectUrl, setNewlist, obj)}>增加</div>
             <div className="updateBtn">修改</div>
             <div className="deleteBtn">删除</div>
         </div>
@@ -31,45 +38,64 @@ const Student = () => {
         <form className="center" >
             <label>学号</label>
             <input type="text" id="Sno" name="Sno"
-                onChange={(e) => setObj({
-                    Sno: e.target.value,
-                    ...obj
-                }
-                )} />
+                onChange={(e) => {
+                    obj =
+                    {
+                        ...obj,
+                        Sno: e.target.value,
+                    }
+
+                }} />
             <label >姓名</label>
             <input type="text" id="Sname" name="Sname"
-                onChange={(e) => setObj({
-                    Sname: e.target.value,
-                    ...obj
-                })}
+                onChange={(e) => {
+                    obj =
+                    {
+                        ...obj,
+                        Sname: e.target.value,
+                    }
+                }}
             />
             <label >性别</label>
             <input type="text" id="Ssex" name="Ssex"
-                onChange={(e) => setObj({
-                    Ssex: e.target.value,
-                    ...obj
-                })}
+                onChange={(e) => {
+                    obj =
+                    {
+                        ...obj,
+                        Ssex: e.target.value,
+                    }
+                }}
             />
             <label >年龄</label>
             <input type="text" id="Sage" name="Sage"
-                onChange={(e) => setObj({
-                    Sage: e.target.value,
-                    ...obj
-                })}
+                onChange={(e) => {
+                    obj =
+                    {
+                        ...obj,
+                        Sage: e.target.value,
+                    }
+                }}
             />
             <label >系别</label>
             <input type="text" id="Sdept" name="Sdept"
-                onChange={(e) => setObj({
-                    Sdept: e.target.value,
-                    ...obj
-                })}
+                onChange={(e) => {
+                    obj =
+                    {
+                        ...obj,
+                        Sdept: e.target.value,
+                    }
+                }}
             />
             <label >奖学金</label>
             <input type="text" id="Scholarship" name="Scholarship"
-                onChange={(e) => setObj({
-                    Scholarship: e.target.value,
-                    ...obj
-                })}
+                onChange={(e) => {
+                    console.log(e.target.value);
+                    obj =
+                    {
+                        ...obj,
+                        Scholarship: e.target.value,
+                    }
+                }}
             />
         </form >
 

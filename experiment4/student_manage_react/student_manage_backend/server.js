@@ -48,7 +48,7 @@ server.get('/api/student/add', (req, res) => {
 
 //查询学生
 server.get('/api/student/select', (req, res) => {
-    console.log(req);
+    // console.log(req);
     let table = req.query.table
     db.query('select * from student', (err, data) => {
         if (err) {
