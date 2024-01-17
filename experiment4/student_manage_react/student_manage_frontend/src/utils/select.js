@@ -4,6 +4,7 @@ const selectFunc = (url, setNewlist) => {
         url: url
     }).then(result => {
         setNewlist(result.data)
+        console.log(result.data);
     })
 }
 export default selectFunc
