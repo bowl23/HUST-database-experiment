@@ -266,6 +266,7 @@ server.get('/api/statistics/cs', (req, res) => {
 
 // 个人信息查询
 server.get('/api/personalGrade', (req, res) => {
+    console.log(req);
     let Sno = req.query.Sno;
     db.query('select * from student where student.Sno=?', [Sno], (err, data) => {
         if (err) {

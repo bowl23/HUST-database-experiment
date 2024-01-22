@@ -4,7 +4,7 @@ import Login from "../pages/login";
 import Student from "../pages/student";
 import Sc from "../pages/sc";
 import Course from "../pages/course";
-import Statistics from "../pages/statistics/idnex";
+import Statistics from "../pages/statistics/index";
 import PersonalGrade from "../pages/personalGrade";
 
 
