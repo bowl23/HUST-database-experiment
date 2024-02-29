@@ -7,8 +7,5 @@
 - 技术栈：
   - 前端：HTML+CSS+JavaScript
   - 后端：node.js+express+MySQL
-- 实验环境：
-  - VSCode
-  - Datagrip
 
 这是苯人第一个全栈项目，第一次尝试前后端数据交互，及数据库操作，刚学完express框架和SQL写的，后续可能会用React重写一版。
